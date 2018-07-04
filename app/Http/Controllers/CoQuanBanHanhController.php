@@ -18,13 +18,13 @@ class CoQuanBanHanhController extends Controller {
 	public function postThem(Request $request) {
 		$this->validate($request,
 			[
-				'Ten' => 'required|unique:CoQuanBanHanh,name|min:5|max:30',
+				'Ten' => 'required|unique:CoQuanBanHanh,name|min:3|max:30',
 			],
 			[
 				'Ten.required' => 'Bạn phải nhập tên cơ quan ban hành',
 				'Ten.unique' => 'Tên cơ quan ban hành đã tồn tại',
-				'Ten.min' => 'Bạn phải nhập tên lớn từ 5 đến 30 ký tự',
-				'Ten.max' => 'Bạn phải nhập tên lớn từ 5 đến 30 ký tự',
+				'Ten.min' => 'Bạn phải nhập tên lớn từ 3 đến 30 ký tự',
+				'Ten.max' => 'Bạn phải nhập tên lớn từ 3 đến 30 ký tự',
 			]);
 		$coquanbanhanh = new CoQuanBanHanh;
 		$coquanbanhanh->name = $request->Ten;
@@ -50,8 +50,8 @@ class CoQuanBanHanhController extends Controller {
 			[
 				'Ten.required' => 'Bạn phải nhập tên cơ quan ban hành',
 				'Ten.unique' => 'Tên cơ quan ban hành đã tồn tại',
-				'Ten.min' => 'Bạn phải nhập tên lớn từ 5 đến 30 ký tự',
-				'Ten.max' => 'Bạn phải nhập tên lớn từ 5 đến 30 ký tự',
+				'Ten.min' => 'Bạn phải nhập tên lớn từ 3 đến 30 ký tự',
+				'Ten.max' => 'Bạn phải nhập tên lớn từ 3 đến 30 ký tự',
 			]);
 
 		$coquanbanhanh->name = $request->Ten;
@@ -59,5 +59,12 @@ class CoQuanBanHanhController extends Controller {
 		$coquanbanhanh->save();
 
 		return redirect('admin/coquanbanhanh/sua/' . $id)->with('thongbao', 'Sửa thành công');
+	}
+
+	public function getXoa($id) {
+		$coquanbanhanh = CoQuanBanHanh::find($id);
+		$coquanbanhanh->delete();
+
+		return redirect('admin/coquanbanhanh/danhsach')->with('thongbao', 'Xoá thành công');
 	}
 }

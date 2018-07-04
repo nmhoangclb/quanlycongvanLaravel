@@ -24,4 +24,9 @@ class CongVan extends Model {
 	public function loaivanban() {
 		return $this->belongsTo('App\LoaiVanBan', 'idloaivanban', 'id');
 	}
+
+	public function loaihinhcongvan() {
+		return $this->belongsTo('App\LoaiHinhCongVan', 'idloaihinhcongvan', 'id');
+	}
+
 }

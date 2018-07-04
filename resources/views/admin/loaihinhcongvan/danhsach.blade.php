@@ -7,7 +7,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header">Hình thức văn bản
+                        <h1 class="page-header">Loại hình công văn
                             <small>danh sách</small>
                         </h1>
                     </div>
@@ -25,12 +25,12 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($hinhthucvanban as $htvb)
+                            @foreach($loaihinhcongvan as $lhcv)
                                 <tr class="odd gradeX" align="center">
-                                    <td>{{ $htvb->id }}</td>
-                                    <td>{{ $htvb->name }}</td>
-                                    <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/hinhthucvanban/xoa/{{ $htvb->id }}">Xoá</a></td>
-                                    <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/hinhthucvanban/sua/{{ $htvb->id }}">Sửa</a></td>
+                                    <td>{{ $lhcv->id }}</td>
+                                    <td>{{ $lhcv->name }}</td>
+                                    <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/loaihinhcongvan/xoa/{{ $lhcv->id }}">Xoá</a></td>
+                                    <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/loaihinhcongvan/sua/{{ $lhcv->id }}">Sửa</a></td>
                                 </tr>
                             @endforeach
                         </tbody>

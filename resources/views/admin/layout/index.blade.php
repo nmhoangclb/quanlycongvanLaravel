@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Hệ thống quản lý công văn">
-    <meta name="author" content="">
+    <meta name="author" content="Nguyễn Minh Hoàng">
     <base href="{{ asset('') }}">
-    <title>Admin - Khoa Phạm</title>
+    <title>Trang quản lý | Hệ thống quản lý công văn</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="admin_asset/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -26,20 +26,8 @@
 
     <!-- DataTables Responsive CSS -->
     <link href="admin_asset/bower_components/datatables-responsive/css/dataTables.responsive.css" rel="stylesheet">
-</head>
 
-<body>
-
-    <div id="wrapper">
-
-        @include('admin.layout.header')
-
-        @yield('content')
-
-    </div>
-    <!-- /#wrapper -->
-
-    <!-- jQuery -->
+     <!-- jQuery -->
     <script src="admin_asset/bower_components/jquery/dist/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
@@ -65,6 +53,21 @@
     </script>
 
     @yield('script')
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        @include('admin.layout.header')
+
+        @yield('content')
+
+    </div>
+    <!-- /#wrapper -->
+
+
 
 </body>
 

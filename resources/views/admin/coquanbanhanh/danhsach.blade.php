@@ -12,6 +12,9 @@
                         </h1>
                     </div>
                     <!-- /.col-lg-12 -->
+                    @if(session('thongbao'))
+                            <div class="alert alert-success">{{ session('thongbao') }}</div>
+                    @endif
                     <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                         <thead>
                             <tr align="center">
@@ -26,8 +29,8 @@
 	                            <tr class="odd gradeX" align="center">
 	                                <td>{{ $cqbh->id }}</td>
 	                                <td>{{ $cqbh->name }}</td>
-	                                <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/coquanbanhanh/xoa"> Delete</a></td>
-	                                <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/coquanbanhanh/sua/{{ $cqbh->id }}">Edit</a></td>
+	                                <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/coquanbanhanh/xoa/{{ $cqbh->id }}">Xoá</a></td>
+	                                <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/coquanbanhanh/sua/{{ $cqbh->id }}">Sửa</a></td>
 	                            </tr>
                             @endforeach
                         </tbody>

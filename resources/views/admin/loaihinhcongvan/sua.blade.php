@@ -7,8 +7,8 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header">Lĩnh vực
-                            <small>thêm</small>
+                        <h1 class="page-header">{{ $loaihinhcongvan->name}}
+                            <small>sửa</small>
                         </h1>
                     </div>
                     <!-- /.col-lg-12 -->
@@ -24,14 +24,14 @@
                         @if(session('thongbao'))
                             <div class="alert alert-success">{{ session('thongbao') }}</div>
                         @endif
-                        <form action="admin/linhvuc/them" method="POST">
+                        <form action="admin/loaihinhcongvan/sua/{{ $loaihinhcongvan->id }}" method="POST">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <div class="form-group">
-                                <label>Tên lĩnh vực</label>
-                                <input class="form-control" name="Ten" placeholder="Nhập tên lĩnh vực" />
+                                <label>Tên loại hình công văn</label>
+                                <input class="form-control" name="Ten" placeholder="Nhập tên loại hình công văn" value="{{ $loaihinhcongvan->name }}" />
                             </div>
 
-                            <button type="submit" class="btn btn-default">Thêm</button>
+                            <button type="submit" class="btn btn-default">Sửa</button>
                             <button type="reset" class="btn btn-default">Làm mới</button>
                         <form>
                     </div>
