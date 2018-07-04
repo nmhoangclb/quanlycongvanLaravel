@@ -100,3 +100,7 @@ Route::group(['prefix' => 'admin'], function () {
 		Route::get('xoa/{id}', 'UserController@getXoa');
 	});
 });
+
+Route::get('trangchu', function () {
+	return view('pages.trangchu');
+});
