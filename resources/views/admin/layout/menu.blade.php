@@ -12,10 +12,27 @@
                             </div>
                         </li> -->
                         <li>
-                            <a href="trangchu"><i class="fa fa-dashboard fa-fw"></i> Trang chủ</a>
+                            <a href="trangchu"><i class="glyphicon glyphicon-home"></i> Trang chủ</a>
                         </li>
+
                         <li>
-                            <a href="admin/coquanbanhanh/danhsach"><i class="fa fa-bar-chart-o fa-fw"></i> Cơ quan ban hành<span class="fa arrow"></span></a>
+                            <a href="#"><i class="glyphicon glyphicon-list-alt"></i> Công văn<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="admin/congvan/danhsach">Danh sách công văn</a>
+                                </li>
+                                <li>
+                                    <a href="admin/congvan/them">Thêm công văn</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+
+
+
+                        @if(Auth::user()->level == 2)
+                        <li>
+                            <a href="admin/coquanbanhanh/danhsach"><i class="fa fa-hospital-o"></i> Cơ quan ban hành<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="admin/coquanbanhanh/danhsach">Danh sách cơ quan ban hành</a>
@@ -27,7 +44,7 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="admin/hinhthucvanban/danhsach"><i class="fa fa-bar-chart-o fa-fw"></i> Hình thức văn bản<span class="fa arrow"></span></a>
+                            <a href="admin/hinhthucvanban/danhsach"><i class="fa fa-columns"></i> Hình thức văn bản<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="admin/hinhthucvanban/danhsach">Danh sách hình thức văn bản</a>
@@ -39,7 +56,7 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="admin/linhvuc/danhsach"><i class="fa fa-bar-chart-o fa-fw"></i> Lĩnh vực<span class="fa arrow"></span></a>
+                            <a href="admin/linhvuc/danhsach"><i class="fa fa-medkit"></i> Lĩnh vực<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="admin/linhvuc/danhsach">Danh sách lĩnh vực</a>
@@ -51,7 +68,7 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="admin/loaivanban/danhsach"><i class="fa fa-bar-chart-o fa-fw"></i> Loại văn bản<span class="fa arrow"></span></a>
+                            <a href="admin/loaivanban/danhsach"><i class="fa fa-list-ul"></i> Loại văn bản<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="admin/loaivanban/danhsach">Danh sách loại văn bản</a>
@@ -63,7 +80,7 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="admin/loaihinhcongvan/danhsach"><i class="fa fa-bar-chart-o fa-fw"></i> Loại hình công văn<span class="fa arrow"></span></a>
+                            <a href="admin/loaihinhcongvan/danhsach"><i class="fa fa-list-alt"></i> Loại hình công văn<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="admin/loaihinhcongvan/danhsach">Danh sách loại văn bản</a>
@@ -74,18 +91,7 @@
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
-                        <li>
-                            <a href="#"><i class="fa fa-cube fa-fw"></i> Công văn<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="admin/congvan/danhsach">Danh sách công văn</a>
-                                </li>
-                                <li>
-                                    <a href="admin/congvan/them">Thêm công văn</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
+
                         <li>
                             <a href="#"><i class="fa fa-users fa-fw"></i> Người dùng<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
@@ -98,6 +104,10 @@
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
+                        @endif
+
+
+
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->

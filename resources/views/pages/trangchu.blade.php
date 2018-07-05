@@ -27,7 +27,7 @@
 
 
 {{-- Kiểm tra dữ liệu của bảng nếu k có thì in ra Bảng hiện có dữ liệu --}}
-				@if(count($congvan) == 0)
+				@if(count($congvantrangchu) == 0)
 					<tr>Bảng hiện tại chưa có dữ liệu</tr>
 				@endif
 
@@ -39,7 +39,7 @@ if (isset($_GET['page']) && $_GET['page'] > 1) {
 }
 
 ?>
-			@foreach($congvan as $cv)
+			@foreach($congvantrangchu as $cv)
 
 
 				<tr class="odd gradeX" align="center">
@@ -61,7 +61,7 @@ if (isset($_GET['page']) && $_GET['page'] > 1) {
 		</tbody>
 	</table>
 	<!-- Paginate -->
-	<div style="text-align: center;">{{ $congvan->links() }}</div>
+	<div style="text-align: center;">{{ $congvantrangchu->links() }}</div>
 </div>
 	<!-- end Page Content -->
 @endsection

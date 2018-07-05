@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\CongVan;
 use App\LinhVuc;
 use Illuminate\Http\Request;
 
@@ -62,8 +63,15 @@ class LinhVucController extends Controller {
 	}
 
 	public function getXoa($id) {
-		$coquanbanhanh = LinhVuc::find($id);
-		$coquanbanhanh->delete();
+		$linhvuc = LinhVuc::find($id);
+		//kiểm tra khoá ngoại trước khi xoá
+		$kiemtrakhoangoai = CongVan::where('idlinhvuc', $id)->get();
+		$soluong = count($kiemtrakhoangoai);
+		if ($soluong) {
+			return redirect('admin/linhvuc/danhsach')->with('loi', 'Không được phép xoá danh mục này vì đang có ' . $soluong . ' công văn đang sử dụng danh mục. Vui lòng tìm và xoá toàn bộ những công văn đó trước!');
+		} else {
+			$linhvuc->delete();
+		}
 
 		return redirect('admin/linhvuc/danhsach')->with('thongbao', 'Xoá thành công');
 	}

@@ -39,6 +39,7 @@
                                 <select class="form-control" name="level">
                                     <option value="0" selected>Nhân viên</option>
                                     <option value="1" >Admin</option>
+                                    <option value="2" >SuperAdmin</option>
                                 </select>
                             </div>
                             <div class="form-group">

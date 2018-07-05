@@ -15,6 +15,9 @@
                     @if(session('thongbao'))
                             <div class="alert alert-success">{{ session('thongbao') }}</div>
                     @endif
+                    @if(session('loi'))
+                            <div class="alert alert-danger">{{ session('loi') }}</div>
+                    @endif
                     <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                         <thead>
                             <tr align="center">

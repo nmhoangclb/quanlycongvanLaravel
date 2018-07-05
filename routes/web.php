@@ -14,8 +14,14 @@
 Route::get('/', function () {
 	return view('welcome');
 });
+//route login and logout
+Route::get('admin/dangnhap', 'UserController@getDangnhapAdmin');
+Route::post('admin/dangnhap', 'UserController@postDangnhapAdmin');
+
+Route::get('dangxuat', 'UserController@getDangxuat');
+
 //route admin
-Route::group(['prefix' => 'admin'], function () {
+Route::group(['prefix' => 'admin', 'middleware' => 'adminLogin'], function () {
 	Route::group(['prefix' => 'coquanbanhanh'], function () {
 		Route::get('danhsach', 'CoQuanBanHanhController@getDanhSach');
 

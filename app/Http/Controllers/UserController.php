@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller {
 	//
@@ -51,19 +52,22 @@ class UserController extends Controller {
 
 	public function postSua(Request $request, $id) {
 		$user = User::find($id);
+		//xử lý validate khi checkbox = true
+
 		$this->validate($request,
 			[
-				'Ten' => 'required|unique:User,name|min:3|max:30',
+				'name' => 'required|min:3|max:30',
 			],
 			[
-				'Ten.required' => 'Bạn phải nhập tên tài khoản',
-				'Ten.unique' => 'Tên tài khoản đã tồn tại',
-				'Ten.min' => 'Bạn phải nhập tên lớn từ 3 đến 30 ký tự',
-				'Ten.max' => 'Bạn phải nhập tên lớn từ 3 đến 30 ký tự',
+				'name.required' => 'Bạn phải nhập tên người dùng',
 			]);
 
-		$user->name = $request->Ten;
-		$user->TenKhongDau = changeTitle($request->Ten);
+		$user->name = $request->name;
+		if ($request->changePassword) {
+			$user->password = bcrypt($request->password);
+		}
+
+		$user->level = $request->level;
 		$user->save();
 
 		return redirect('admin/user/sua/' . $id)->with('thongbao', 'Sửa thành công');
@@ -74,5 +78,36 @@ class UserController extends Controller {
 		$coquanbanhanh->delete();
 
 		return redirect('admin/user/danhsach')->with('thongbao', 'Xoá thành công');
+	}
+
+	public function getDangnhapAdmin() {
+		return view('admin.login');
+	}
+
+	public function postDangnhapAdmin(Request $request) {
+		$this->validate($request,
+			[
+				'email' => 'required',
+				'password' => 'required|min:6|max:20',
+			],
+			[
+				'email.required' => 'Bạn phải nhập email',
+				'password.required' => 'Bạn phải nhập mật khẩu',
+				'password.min' => 'Bạn phải nhập mật khẩu lớn hơn, từ 6 đến 20 ký tự',
+				'password.max' => 'Bạn phải nhập mật khẩu nhỏ hơn, từ 6 đến 20 ký tự',
+			]
+
+		);
+
+		if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+			return redirect('admin/congvan/danhsach');
+		} else {
+			return redirect('admin/dangnhap')->with('loi', 'Đăng nhập không thành công, mời nhập lại!');
+		}
+	}
+
+	public function getDangxuat() {
+		Auth::logout();
+		return redirect('admin/dangnhap')->with('thongbao', 'Đăng xuất thành công');
 	}
 }

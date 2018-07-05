@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\CongVan;
 use App\LoaiHinhCongVan;
 use Illuminate\Http\Request;
 
@@ -62,8 +63,15 @@ class LoaiHinhCongVanController extends Controller {
 	}
 
 	public function getXoa($id) {
-		$coquanbanhanh = LoaiHinhCongVan::find($id);
-		$coquanbanhanh->delete();
+		$loaivanban = LoaiHinhCongVan::find($id);
+		//kiểm tra khoá ngoại trước khi xoá
+		$kiemtrakhoangoai = CongVan::where('idloaihinhcongvan', $id)->get();
+		$soluong = count($kiemtrakhoangoai);
+		if ($soluong) {
+			return redirect('admin/loaihinhcongvan/danhsach')->with('loi', 'Không được phép xoá danh mục này vì đang có ' . $soluong . ' công văn đang sử dụng danh mục. Vui lòng tìm và xoá toàn bộ những công văn đó trước!');
+		} else {
+			$loaivanban->delete();
+		}
 
 		return redirect('admin/loaihinhcongvan/danhsach')->with('thongbao', 'Xoá thành công');
 	}

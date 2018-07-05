@@ -26,7 +26,7 @@
                         @if(session('thongbao'))
                             <div class="alert alert-success">{{ session('thongbao') }}</div>
                         @endif
-                        <form action="admin/user/them" method="POST">
+                        <form action="admin/user/sua/{{ $user->id }}" method="POST">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <div class="form-group">
                                 <label>Tên người dùng</label>
@@ -43,19 +43,21 @@
                                      value="0">Nhân viên</option>
                                     <option @if($user->level = 1) selected @endif
                                     value="1" >Admin</option>
+                                    <option @if($user->level = 2) selected @endif
+                                    value="2" >SuperAdmin</option>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <input type="checkbox" id="changePassword" name="changePassword" >
                                 <label>Mật khẩu</label>
-                                <input id="password" class="form-control" disabled name="password" type="password" placeholder="Nhập mật khẩu" />
+                                <input class="form-control password" disabled name="password" type="password" placeholder="Nhập mật khẩu" />
                             </div>
                             <div class="form-group">
                                 <label>Nhập lại mật khẩu</label>
-                                <input id="password" class="form-control" disabled name="passwordAgain" type="password" placeholder="Nhập lại mật khẩu" />
+                                <input class="form-control password" disabled name="passwordAgain" type="password" placeholder="Nhập lại mật khẩu" />
                             </div>
 
-                            <button type="submit" class="btn btn-default">Thêm</button>
+                            <button type="submit" class="btn btn-default">Sửa</button>
                             <button type="reset" class="btn btn-default">Làm mới</button>
                         <form>
                     </div>
@@ -69,7 +71,7 @@
 @endsection
 
 @section('script')
-    <script src="js/jquery.min.js"></script>
+
     <script type="text/javascript">
         $(document).ready(function(){
             $("#changePassword").change(function(){
