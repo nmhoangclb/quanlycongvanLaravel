@@ -1,90 +1,73 @@
+
 <div class="row main-left">
             <div class="col-md-3 ">
                 <ul class="list-group" id="menu">
-                    <li href="#" class="list-group-item menu1 active">
+                    <li href="trangchu" class="list-group-item menu1 active">
                     	Menu
                     </li>
 
                     <li href="#" class="list-group-item menu1">
-                    	Level 1
+                    	Cơ quan ban hành
                     </li>
                     <ul>
-                		<li class="list-group-item">
-                			<a href="#">Level2</a>
-                		</li>
-                		<li class="list-group-item">
-                			<a href="#">Level2</a>
-                		</li>
-                		<li class="list-group-item">
-                			<a href="#">Level2</a>
-                		</li>
-                		<li class="list-group-item">
-                			<a href="#">Level2</a>
-                		</li>
-                    </ul>
+                        @foreach($coquanbanhanhviewshare as $cqbh)
 
+                    		<li class="list-group-item">
+                    			<a href="coquanbanhanh/{{ $cqbh->id }}/{{ $cqbh->TenKhongDau }}.html">{{ $cqbh->name }}</a>
+                    		</li>
+
+                        @endforeach
+                    </ul>
                     <li href="#" class="list-group-item menu1">
-                    	<a href="#">Level 1</a>
+                        Hình thức văn bản
                     </li>
                     <ul>
-                		<li class="list-group-item">
-                			<a href="#">Level2</a>
-                		</li>
-                		<li class="list-group-item">
-                			<a href="#">Level2</a>
-                		</li>
-                		<li class="list-group-item">
-                			<a href="#">Level2</a>
-                		</li>
-                		<li class="list-group-item">
-                			<a href="#">Level2</a>
-                		</li>
+                        @foreach($hinhthucvanbanviewshare as $htvb)
+
+                            <li class="list-group-item">
+                                <a href="hinhthucvanban/{{ $htvb->id }}/{{ $htvb->TenKhongDau }}.html">{{ $htvb->name }}</a>
+                            </li>
+
+                        @endforeach
                     </ul>
-
-
                     <li href="#" class="list-group-item menu1">
-                    	<a href="#">Level 1</a>
-                    </li>
-
-                    <ul>
-                		<li class="list-group-item">
-                			<a href="#">Level2</a>
-                		</li>
-                		<li class="list-group-item">
-                			<a href="#">Level2</a>
-                		</li>
-                		<li class="list-group-item">
-                			<a href="#">Level2</a>
-                		</li>
-                		<li class="list-group-item">
-                			<a href="#">Level2</a>
-                		</li>
-                    </ul>
-
-
-                    <li href="#" class="list-group-item menu1">
-                    	<a href="#">Level 1</a>
+                        Lĩnh vực
                     </li>
                     <ul>
-                		<li class="list-group-item">
-                			<a href="#">Level2</a>
-                		</li>
-                		<li class="list-group-item">
-                			<a href="#">Level2</a>
-                		</li>
-                		<li class="list-group-item">
-                			<a href="#">Level2</a>
-                		</li>
-                		<li class="list-group-item">
-                			<a href="#">Level2</a>
-                		</li>
-                    </ul>
+                        @foreach($linhvucviewshare as $lv)
 
+                            <li class="list-group-item">
+                                <a href="linhvuc/{{ $lv->id }}/{{ $lv->TenKhongDau }}.html">{{ $lv->name }}</a>
+                            </li>
+
+                        @endforeach
+                    </ul>
                     <li href="#" class="list-group-item menu1">
-                    	<a href="#">Level 1</a>
+                        Loại văn bản
                     </li>
-                    <li href="#" class="list-group-item menu1">
-                    	<a href="#">Level 1</a>
+                    <ul>
+                        @foreach($loaivanbanviewshare as $lvb)
+
+                            <li class="list-group-item">
+                                <a href="loaivanban/{{ $lvb->id }}/{{ $lvb->TenKhongDau }}.html">{{ $lvb->name }}</a>
+                            </li>
+
+                        @endforeach
+                    </ul>
+                    <!-- <li href="#" class="list-group-item menu1">
+                        Loại hình công văn
                     </li>
+                    {{--  <ul>
+                        @foreach($loaihinhcongvanviewshare as $lhcv)
+
+                            <li class="list-group-item">
+                                <a href="loaihinhcongvan/{{ $lhcv->id }}/{{ $lhcv->TenKhongDau }}.html">{{ $lhcv->name }}</a>
+                            </li>
+
+                        @endforeach
+                    </ul>
+                    --}} -->
+
+
                 </ul>
             </div>

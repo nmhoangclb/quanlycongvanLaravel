@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Hệ thống quản lý công văn">
     <meta name="author" content="Nguyễn Minh Hoàng">
+    <base href="{{ asset('') }}">
 
     <title>@yield('title') |Hệ thống quản lý công văn</title>
 
@@ -62,8 +63,18 @@
 </head>
 
 <body>
-
+    <div class="container">
     @include('layout.header')
+
+    @include('layout.slider')
+
+    <div class="space20"></div>
+
+
+    @include('layout.menu')
+
+    <!-- Content -->
+
 
 	@yield('content')
 

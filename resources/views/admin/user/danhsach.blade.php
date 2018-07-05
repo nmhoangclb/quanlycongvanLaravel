@@ -12,7 +12,20 @@
                         </h1>
                     </div>
                     <!-- /.col-lg-12 -->
-                    $user->xuatthongbao();
+                    @if(count($errors) > 0)
+                        <div class="alert alert-danger">
+                            @foreach($errors->all() as $err )
+                                {{ $err }}<br>
+                            @endforeach
+                        </div>
+                    @endif
+
+                    @if(session('thongbao'))
+                        <div class="alert alert-success">{{ session('thongbao') }}</div>
+                    @endif
+                    @if(session('loi'))
+                        <div class="alert alert-success">{{ session('loi') }}</div>
+                    @endif
                     <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                         <thead>
                             <tr align="center">

@@ -12,7 +12,7 @@
                             </div>
                         </li> -->
                         <li>
-                            <a href="#"><i class="fa fa-dashboard fa-fw"></i> Trang chủ</a>
+                            <a href="trangchu"><i class="fa fa-dashboard fa-fw"></i> Trang chủ</a>
                         </li>
                         <li>
                             <a href="admin/coquanbanhanh/danhsach"><i class="fa fa-bar-chart-o fa-fw"></i> Cơ quan ban hành<span class="fa arrow"></span></a>

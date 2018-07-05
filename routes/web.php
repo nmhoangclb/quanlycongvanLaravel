@@ -101,6 +101,14 @@ Route::group(['prefix' => 'admin'], function () {
 	});
 });
 
-Route::get('trangchu', function () {
-	return view('pages.trangchu');
-});
+Route::get('trangchu', 'PagesController@trangchu');
+
+Route::get('coquanbanhanh/{id}/{TenKhongDau}.html', 'PagesController@coquanbanhanh');
+
+Route::get('hinhthucvanban/{id}/{TenKhongDau}.html', 'PagesController@hinhthucvanban');
+
+Route::get('linhvuc/{id}/{TenKhongDau}.html', 'PagesController@linhvuc');
+
+Route::get('loaivanban/{id}/{TenKhongDau}.html', 'PagesController@loaivanban');
+
+Route::get('loaihinhcongvan/{id}/{TenKhongDau}.html', 'PagesController@loaihinhcongvan');
