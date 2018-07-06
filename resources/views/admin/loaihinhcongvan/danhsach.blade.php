@@ -28,9 +28,23 @@
                             </tr>
                         </thead>
                         <tbody>
+
+{{-- Kiểm tra dữ liệu của bảng nếu k có thì in ra Bảng hiện có dữ liệu --}}
+@if(count($loaihinhcongvan) == 0)
+<tr>Bảng hiện tại chưa có dữ liệu</tr>
+@endif
+
+<?php
+//Cách xuất STT
+$i = 1;
+if (isset($_GET['page']) && $_GET['page'] != 1) {
+	$i = (($_GET['page'] - 1) * 10) + 1;
+}
+?>
+
                             @foreach($loaihinhcongvan as $lhcv)
                                 <tr class="odd gradeX" align="center">
-                                    <td>{{ $lhcv->id }}</td>
+                                    <td>{{ $i }}</td><?php $i++;?>
                                     <td>{{ $lhcv->name }}</td>
                                     <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/loaihinhcongvan/xoa/{{ $lhcv->id }}">Xoá</a></td>
                                     <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/loaihinhcongvan/sua/{{ $lhcv->id }}">Sửa</a></td>

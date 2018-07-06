@@ -28,9 +28,23 @@
                             </tr>
                         </thead>
                         <tbody>
+
+{{-- Kiểm tra dữ liệu của bảng nếu k có thì in ra Bảng hiện có dữ liệu --}}
+@if(count($linhvuc) == 0)
+<tr>Bảng hiện tại chưa có dữ liệu</tr>
+@endif
+
+<?php
+//Cách xuất STT
+$i = 1;
+if (isset($_GET['page']) && $_GET['page'] != 1) {
+	$i = (($_GET['page'] - 1) * 10) + 1;
+}
+?>
+
                             @foreach($linhvuc as $lv)
                                 <tr class="odd gradeX" align="center">
-                                    <td>{{ $lv->id }}</td>
+                                    <td>{{ $i }}</td><?php $i++;?>
                                     <td>{{ $lv->name }}</td>
                                     <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/linhvuc/xoa/{{ $lv->id }}">Xoá</a></td>
                                     <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/linhvuc/sua/{{ $lv->id }}">Sửa</a></td>

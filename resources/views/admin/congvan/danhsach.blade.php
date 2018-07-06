@@ -50,9 +50,23 @@
                             </tr>
                         </thead>
                         <tbody>
+{{-- Kiểm tra dữ liệu của bảng nếu k có thì in ra Bảng hiện có dữ liệu --}}
+@if(count($congvan) == 0)
+<tr>Bảng hiện tại chưa có dữ liệu</tr>
+@endif
+
+<?php
+//Cách xuất STT
+$i = 1;
+if (isset($_GET['page']) && $_GET['page'] != 1) {
+	$i = (($_GET['page'] - 1) * 10) + 1;
+}
+?>
+
+
                             @foreach($congvan as $key => $value)
                                 <tr class="odd gradeX" align="center">
-                                    <td>{{ $value->id }}</td>
+                                    <td>{{ $i }}</td><?php $i++;?>
                                     <td>{{ $value->sohieu }}</td>
                                     <td>{{ Carbon\Carbon::parse($value->ngayky)->format('d/m/Y') }}</td>
                                     <td>{{ $value->trichyeunoidung }}</td>

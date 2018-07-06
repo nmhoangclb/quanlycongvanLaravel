@@ -28,9 +28,23 @@
                             </tr>
                         </thead>
                         <tbody>
+
+{{-- Kiểm tra dữ liệu của bảng nếu k có thì in ra Bảng hiện có dữ liệu --}}
+@if(count($coquanbanhanh) == 0)
+<tr>Bảng hiện tại chưa có dữ liệu</tr>
+@endif
+
+<?php
+//Cách xuất STT
+$i = 1;
+if (isset($_GET['page']) && $_GET['page'] != 1) {
+	$i = (($_GET['page'] - 1) * 10) + 1;
+}
+?>
+
                         	@foreach($coquanbanhanh as $cqbh)
 	                            <tr class="odd gradeX" align="center">
-	                                <td>{{ $cqbh->id }}</td>
+	                                <td>{{ $i }}</td><?php $i++?>
 	                                <td>{{ $cqbh->name }}</td>
 	                                <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/coquanbanhanh/xoa/{{ $cqbh->id }}">Xoá</a></td>
 	                                <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/coquanbanhanh/sua/{{ $cqbh->id }}">Sửa</a></td>

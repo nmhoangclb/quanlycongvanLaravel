@@ -40,9 +40,23 @@
                             </tr>
                         </thead>
                         <tbody>
+
+{{-- Kiểm tra dữ liệu của bảng nếu k có thì in ra Bảng hiện có dữ liệu --}}
+@if(count($user) == 0)
+<tr>Bảng hiện tại chưa có dữ liệu</tr>
+@endif
+
+<?php
+//Cách xuất STT
+$i = 1;
+if (isset($_GET['page']) && $_GET['page'] != 1) {
+	$i = (($_GET['page'] - 1) * 10) + 1;
+}
+?>
+
                             @foreach($user as $usr)
                                 <tr class="odd gradeX" align="center">
-                                    <td>{{ $usr->id }}</td>
+                                    <td>{{ $i }}</td><?php $i++;?>
                                     <td>{{ $usr->name }}</td>
                                     <td>{{ $usr->email }}</td>
 

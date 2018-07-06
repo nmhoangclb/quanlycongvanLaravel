@@ -68,6 +68,8 @@ class UserController extends Controller {
 		}
 
 		$user->level = $request->level;
+		//$user->created_at = $user->created_at;
+		// $user->updated_at = timestamps();
 		$user->save();
 
 		return redirect('admin/user/sua/' . $id)->with('thongbao', 'Sửa thành công');
