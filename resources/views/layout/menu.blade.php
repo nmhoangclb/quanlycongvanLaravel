@@ -53,20 +53,26 @@
                             </li>
 
                         @endforeach
-                    </ul>
-                    <!-- <li href="#" class="list-group-item menu1">
-                        Loại hình công văn
-                    </li>
-                    {{--  <ul>
-                        @foreach($loaihinhcongvanviewshare as $lhcv)
 
-                            <li class="list-group-item">
-                                <a href="loaihinhcongvan/{{ $lhcv->id }}/{{ $lhcv->TenKhongDau }}.html">{{ $lhcv->name }}</a>
+                    @if(Auth::user())
+                    {{-- Xử lý hiện menu loại công văn nếu user đăng nhập --}}
+
+                        </ul>
+                            <li href="#" class="list-group-item menu1">
+                            Loại hình công văn
                             </li>
+                            <ul>
+                                @foreach($loaihinhcongvanviewshare as $lhcv)
 
-                        @endforeach
-                    </ul>
-                    --}} -->
+                                    <li class="list-group-item">
+                                        <a href="loaihinhcongvan/{{ $lhcv->id }}/{{ $lhcv->TenKhongDau }}.html">{{ $lhcv->name }}</a>
+                                    </li>
+
+                                @endforeach
+                        </ul>
+
+                    @endif
+
 
 
                 </ul>

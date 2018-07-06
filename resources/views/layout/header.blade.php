@@ -30,22 +30,36 @@
 			    </form>
 
 			    <ul class="nav navbar-nav pull-right">
-                    <li>
-                        <a href="#">Đăng ký</a>
-                    </li>
-                    <li>
-                        <a href="#">Đăng nhập</a>
-                    </li>
-                    <li>
-                    	<a>
-                    		<span class ="glyphicon glyphicon-user"></span>
-                    		Nguyễn Minh Hoàng
-                    	</a>
-                    </li>
-
-                    <li>
-                    	<a href="#">Đăng xuất</a>
-                    </li>
+                    @if(!Auth::user())
+                        <li>
+                            <a href="dangnhap">Đăng nhập</a>
+                        </li>
+                    @endif
+                    @if(Auth::user())
+                        @if(Auth::user()->level > 0)
+                            <li>
+                                <a href="admin/congvan/danhsach">
+                                    <span class ="glyphicon glyphicon-home"></span>
+                                    Trang quản trị
+                                </a>
+                            </li>
+                        @endif
+                        <li>
+                        	<a
+                            @if(Auth::user()->level == 2)
+                                href="admin/user/sua/{{ Auth::user()->id }}"
+                            @endif
+                            >
+                        		<span class ="glyphicon glyphicon-user"></span>
+                        		{{ Auth::user()->name }}
+                        	</a>
+                        </li>
+                    @endif
+                    @if(Auth::user())
+                        <li>
+                        	<a href="dangxuat">Đăng xuất</a>
+                        </li>
+                    @endif
 
                 </ul>
             </div>

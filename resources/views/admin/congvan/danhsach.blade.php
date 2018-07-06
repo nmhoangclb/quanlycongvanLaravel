@@ -74,7 +74,7 @@ if (isset($_GET['page']) && $_GET['page'] != 1) {
                                     @if($value->ngaychuyen != '')
                                         <td>{{ Carbon\Carbon::parse($value->ngaychuyen)->format('d/m/Y') }}</td>
                                     @else
-                                        <td>(Không)</td>
+                                        <td>-</td>
                                     @endif
 
                                     <td>{{ $value->loaihinhcongvan->name }}</td>

@@ -11,14 +11,17 @@
 |
  */
 
-Route::get('/', function () {
-	return view('welcome');
-});
+Route::get('/', 'PagesController@trangchu');
+Route::get('dangnhap', 'PagesController@getDangnhap');
+Route::post('dangnhap', 'PagesController@postDangnhap');
+Route::get('dangxuat', 'PagesController@getDangxuat');
+
 //route login and logout
+Route::get('admin', 'UserController@getDangnhapAdmin');
 Route::get('admin/dangnhap', 'UserController@getDangnhapAdmin');
 Route::post('admin/dangnhap', 'UserController@postDangnhapAdmin');
 
-Route::get('dangxuat', 'UserController@getDangxuat');
+Route::get('admin/dangxuat', 'UserController@getDangxuat');
 
 //route admin
 Route::group(['prefix' => 'admin', 'middleware' => 'adminLogin'], function () {

@@ -24,7 +24,7 @@
                             <li><a href="admin/user/sua/{{ Auth::user()->id }}"><i class="fa fa-gear fa-fw"></i> Thông tin tài khoản</a>
                             </li>
                             <li class="divider"></li>
-                            <li><a href="dangxuat"><i class="fa fa-sign-out fa-fw"></i> Thoát</a>
+                            <li><a href="admin/dangxuat"><i class="fa fa-sign-out fa-fw"></i> Thoát</a>
                             </li>
                         @endif
                     </ul>

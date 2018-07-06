@@ -23,8 +23,8 @@
                             <tr align="center">
                                 <th>ID</th>
                                 <th>Tên</th>
-                                <th>Xoá</th>
-                                <th>Sửa</th>
+                                <!-- <th>Xoá</th>
+                                <th>Sửa</th> -->
                             </tr>
                         </thead>
                         <tbody>
@@ -46,8 +46,8 @@ if (isset($_GET['page']) && $_GET['page'] != 1) {
                                 <tr class="odd gradeX" align="center">
                                     <td>{{ $i }}</td><?php $i++;?>
                                     <td>{{ $lhcv->name }}</td>
-                                    <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/loaihinhcongvan/xoa/{{ $lhcv->id }}">Xoá</a></td>
-                                    <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/loaihinhcongvan/sua/{{ $lhcv->id }}">Sửa</a></td>
+                                    <!-- <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/loaihinhcongvan/xoa/{{ $lhcv->id }}">Xoá</a></td>
+                                    <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/loaihinhcongvan/sua/{{ $lhcv->id }}">Sửa</a></td> -->
                                 </tr>
                             @endforeach
                         </tbody>

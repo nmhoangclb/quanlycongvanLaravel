@@ -189,7 +189,7 @@ class CongVanController extends Controller {
 
 		$congvan->save();
 
-		return redirect('admin/congvan/them')->with('thongbao', 'Sửa thành công');
+		return redirect('admin/congvan/sua/' . $id)->with('thongbao', 'Sửa thành công');
 
 	}
 

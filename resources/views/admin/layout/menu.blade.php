@@ -85,9 +85,10 @@
                                 <li>
                                     <a href="admin/loaihinhcongvan/danhsach">Danh sách loại văn bản</a>
                                 </li>
-                                <li>
+                                <!-- chưa xử lý nếu phát sinh thêm 1 loại hình thức công văn -->
+                                <!-- <li>
                                     <a href="admin/loaihinhcongvan/them">Thêm loại văn bản</a>
-                                </li>
+                                </li> -->
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>

@@ -32,7 +32,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Email</label>
-                                <input class="form-control" name="email" type="email" placeholder="Nhập email người dùng" />
+                                <input class="form-control" name="email" type="email" required placeholder="Nhập email người dùng" />
                             </div>
                             <div class="form-group">
                                 <label>Quyền</label>
@@ -44,11 +44,11 @@
                             </div>
                             <div class="form-group">
                                 <label>Mật khẩu</label>
-                                <input class="form-control" name="password" type="password" placeholder="Nhập mật khẩu" />
+                                <input class="form-control" name="password" type="password" required placeholder="Nhập mật khẩu" />
                             </div>
                             <div class="form-group">
                                 <label>Nhập lại mật khẩu</label>
-                                <input class="form-control" name="passwordAgain" type="password" placeholder="Nhập lại mật khẩu" />
+                                <input class="form-control" name="passwordAgain" type="password" required placeholder="Nhập lại mật khẩu" />
                             </div>
 
                             <button type="submit" class="btn btn-default">Thêm</button>

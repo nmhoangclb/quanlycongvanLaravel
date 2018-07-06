@@ -16,6 +16,9 @@
 					<th>Số hiệu</th>
 					<th>Ngày ký</th>
 					<th>Trích yếu nội dung</th>
+					@if(Auth::user())
+						<th>Loại hình công văn</th>
+					@endif
 					<th>Cơ quan ban hành</th>
 					<th>Hình thức văn bản</th>
 					<th>Lĩnh vực</th>
@@ -39,22 +42,36 @@ if (isset($_GET['page']) && $_GET['page'] > 1) {
 
 ?>
 				@foreach($congvantrangchu as $cv)
+					@if(Auth::user())
+						<tr class="odd gradeX" align="center">
+							<td>{{ $i }}</td>
+							<td>{{ $cv->sohieu }}</td>
+							<td>{{ Carbon\Carbon::parse($cv->ngayky)->format('d/m/Y') }}</td>
+							<td>{{ $cv->trichyeunoidung }}</td>
+							<td>{{ $cv->loaihinhcongvan->name }}</td>
+							<td>{{ $cv->coquanbanhanh->name }}</td>
+							<td>{{ $cv->hinhthucvanban->name }}</td>
+							<td>{{ $cv->linhvuc->name }}</td>
+							<td>{{ $cv->loaivanban->name }}</td>
+							<?php $i++;?>
+						</tr>
+					@else
+						<tr class="odd gradeX" align="center">
+							<td>{{ $i }}</td>
+							<td>{{ $cv->sohieu }}</td>
+							<td>{{ Carbon\Carbon::parse($cv->ngayky)->format('d/m/Y') }}</td>
+							<td>{{ $cv->trichyeunoidung }}</td>
+							<td>{{ $cv->coquanbanhanh->name }}</td>
+							<td>{{ $cv->hinhthucvanban->name }}</td>
+							<td>{{ $cv->linhvuc->name }}</td>
+							<td>{{ $cv->loaivanban->name }}</td>
+							<?php $i++;?>
+						</tr>
 
-
-				<tr class="odd gradeX" align="center">
-					<td>{{ $i }}</td>
-					<td>{{ $cv->sohieu }}</td>
-					<td>{{ Carbon\Carbon::parse($cv->ngayky)->format('d/m/Y') }}</td>
-					<td>{{ $cv->trichyeunoidung }}</td>
-					<td>{{ $cv->coquanbanhanh->name }}</td>
-					<td>{{ $cv->hinhthucvanban->name }}</td>
-					<td>{{ $cv->linhvuc->name }}</td>
-					<td>{{ $cv->loaivanban->name }}</td>
-					<?php $i++;?>
-
-
-				</tr>
+					@endif
 				@endforeach
+
+
 
 
 			</tbody>
