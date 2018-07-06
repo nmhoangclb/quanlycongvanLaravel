@@ -16,6 +16,9 @@ Route::get('dangnhap', 'PagesController@getDangnhap');
 Route::post('dangnhap', 'PagesController@postDangnhap');
 Route::get('dangxuat', 'PagesController@getDangxuat');
 
+//tìm kiếm
+Route::get('timkiem', 'PagesController@getTimkiem');
+
 //route login and logout
 Route::get('admin', 'UserController@getDangnhapAdmin');
 Route::get('admin/dangnhap', 'UserController@getDangnhapAdmin');
@@ -107,6 +110,18 @@ Route::group(['prefix' => 'admin', 'middleware' => 'adminLogin'], function () {
 		Route::post('them', 'UserController@postThem');
 
 		Route::get('xoa/{id}', 'UserController@getXoa');
+	});
+
+	Route::group(['prefix' => 'slide'], function () {
+		Route::get('danhsach', 'SlideController@getDanhSach');
+
+		Route::get('sua/{id}', 'SlideController@getSua');
+		Route::post('sua/{id}', 'SlideController@postSua');
+
+		Route::get('them', 'SlideController@getThem');
+		Route::post('them', 'SlideController@postThem');
+
+		Route::get('xoa/{id}', 'SlideController@getXoa');
 	});
 });
 
