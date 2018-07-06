@@ -30,6 +30,7 @@ function doimau($str, $tukhoa) {
 					<th>Hình thức văn bản</th>
 					<th>Lĩnh vực</th>
 					<th>Loại văn bản</th>
+					<th>Tải về</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -60,6 +61,7 @@ if (isset($_GET['page']) && $_GET['page'] > 1) {
 							<td>{{ $cv->hinhthucvanban->name }}</td>
 							<td>{{ $cv->linhvuc->name }}</td>
 							<td>{{ $cv->loaivanban->name }}</td>
+							<td><a href="upload/{{ $cv->tentaptindinhkem }}" target="_blank"><div  class="glyphicon glyphicon-download-alt"></div></a></td>
 							<?php $i++;?>
 						</tr>
 					@else
@@ -72,6 +74,7 @@ if (isset($_GET['page']) && $_GET['page'] > 1) {
 							<td>{{ $cv->hinhthucvanban->name }}</td>
 							<td>{{ $cv->linhvuc->name }}</td>
 							<td>{{ $cv->loaivanban->name }}</td>
+							<td><a href="upload/{{ $cv->tentaptindinhkem }}" target="_blank"><div  class="glyphicon glyphicon-download-alt"></div></a></td>
 							<?php $i++;?>
 						</tr>
 

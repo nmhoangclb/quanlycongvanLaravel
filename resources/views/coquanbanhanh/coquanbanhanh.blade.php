@@ -24,6 +24,7 @@
 				<th>Hình thức văn bản</th>
 				<th>Lĩnh vực</th>
 				<th>Loại văn bản</th>
+				<th>Tải về</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -48,12 +49,13 @@ if (isset($_GET['page']) && $_GET['page'] != 1) {
 							<td>{{ $i }}</td>
 							<td>{{ $cv->sohieu }}</td>
 							<td>{{ Carbon\Carbon::parse($cv->ngayky)->format('d/m/Y') }}</td>
-							<td>{{ $cv->trichyeunoidung }}</td>
+							<td><a href="chitiet/{{ $cv->id }}">{{ $cv->trichyeunoidung }}</a></td>
 							<td>{{ $cv->loaihinhcongvan->name }}</td>
 							<td>{{ $cv->coquanbanhanh->name }}</td>
 							<td>{{ $cv->hinhthucvanban->name }}</td>
 							<td>{{ $cv->linhvuc->name }}</td>
 							<td>{{ $cv->loaivanban->name }}</td>
+							<td><a href="upload/{{ $cv->tentaptindinhkem }}" target="_blank"><div  class="glyphicon glyphicon-download-alt"></div></a></td>
 							<?php $i++;?>
 						</tr>
 					@else
@@ -61,11 +63,12 @@ if (isset($_GET['page']) && $_GET['page'] != 1) {
 							<td>{{ $i }}</td>
 							<td>{{ $cv->sohieu }}</td>
 							<td>{{ Carbon\Carbon::parse($cv->ngayky)->format('d/m/Y') }}</td>
-							<td>{{ $cv->trichyeunoidung }}</td>
+							<td><a href="chitiet/{{ $cv->id }}">{{ $cv->trichyeunoidung }}</td>
 							<td>{{ $cv->coquanbanhanh->name }}</td>
 							<td>{{ $cv->hinhthucvanban->name }}</td>
 							<td>{{ $cv->linhvuc->name }}</td>
 							<td>{{ $cv->loaivanban->name }}</td>
+							<td><a href="upload/{{ $cv->tentaptindinhkem }} target="_blank""><div  class="glyphicon glyphicon-download-alt"></div></a></td>
 							<?php $i++;?>
 						</tr>
 

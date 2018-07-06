@@ -19,6 +19,13 @@ Route::get('dangxuat', 'PagesController@getDangxuat');
 //tìm kiếm
 Route::get('timkiem', 'PagesController@getTimkiem');
 
+//giới thiệu và liên hệ
+Route::get('gioithieu', 'PagesController@getGioithieu');
+Route::get('lienhe', 'PagesController@getLienHe');
+
+//chi tiết công văn
+Route::get('chitiet/{id}', 'PagesController@getChiTiet');
+
 //route login and logout
 Route::get('admin', 'UserController@getDangnhapAdmin');
 Route::get('admin/dangnhap', 'UserController@getDangnhapAdmin');

@@ -141,4 +141,17 @@ class PagesController extends Controller {
 
 	}
 
+	function getGioithieu() {
+		return view('pages.gioithieu');
+	}
+
+	function getLienHe() {
+		return view('pages.lienhe');
+	}
+
+	function getChitiet($id) {
+		$chitietcongvan = CongVan::find($id);
+		return view('pages.chitiet', ['chitietcongvan' => $chitietcongvan]);
+	}
+
 }
