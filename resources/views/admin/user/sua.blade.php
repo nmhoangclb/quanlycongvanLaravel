@@ -38,14 +38,25 @@
                             </div>
                             <div class="form-group">
                                 <label>Quyền</label>
-                                <select class="form-control" name="level">
-                                    <option @if($user->level == 0) selected @endif
-                                     value="0">Nhân viên</option>
-                                    <option @if($user->level == 1) selected @endif
-                                    value="1" >Admin</option>
-                                    <option @if($user->level == 2) selected @endif
-                                    value="2" >SuperAdmin</option>
-                                </select>
+                                @if($user->level < 2)
+                                    <select class="form-control" name="level">
+                                        <option disabled @if($user->level == 0) selected @endif
+                                         value="0">Nhân viên</option>
+                                        <option disabled @if($user->level == 1) selected @endif
+                                        value="1" >Admin</option>
+                                        <option disabled @if($user->level == 2) selected @endif
+                                        value="2" >SuperAdmin</option>
+                                    </select>
+                                @else
+                                    <select class="form-control" name="level">
+                                        <option @if($user->level == 0) selected @endif
+                                         value="0">Nhân viên</option>
+                                        <option @if($user->level == 1) selected @endif
+                                        value="1" >Admin</option>
+                                        <option @if($user->level == 2) selected @endif
+                                        value="2" >SuperAdmin</option>
+                                    </select>
+                                @endif
                             </div>
                             <div class="form-group">
                                 <input type="checkbox" id="changePassword" name="changePassword" >

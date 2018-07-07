@@ -48,7 +48,7 @@ if (isset($_GET['page']) && $_GET['page'] > 1) {
 							<td>{{ $i }}</td>
 							<td>{{ $cv->sohieu }}</td>
 							<td>{{ Carbon\Carbon::parse($cv->ngayky)->format('d/m/Y') }}</td>
-							<td>{{ $cv->trichyeunoidung }}</td>
+							<td><a href="chitiet/{{ $cv->id }}">{{ $cv->trichyeunoidung }}</a></td>
 							<td>{{ $cv->loaihinhcongvan->name }}</td>
 							<td>{{ $cv->coquanbanhanh->name }}</td>
 							<td>{{ $cv->hinhthucvanban->name }}</td>
@@ -62,7 +62,7 @@ if (isset($_GET['page']) && $_GET['page'] > 1) {
 							<td>{{ $i }}</td>
 							<td>{{ $cv->sohieu }}</td>
 							<td>{{ Carbon\Carbon::parse($cv->ngayky)->format('d/m/Y') }}</td>
-							<td>{{ $cv->trichyeunoidung }}</td>
+							<td><a href="chitiet/{{ $cv->id }}">{{ $cv->trichyeunoidung }}</a></td>
 							<td>{{ $cv->coquanbanhanh->name }}</td>
 							<td>{{ $cv->hinhthucvanban->name }}</td>
 							<td>{{ $cv->linhvuc->name }}</td>

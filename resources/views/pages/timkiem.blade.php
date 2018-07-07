@@ -55,7 +55,7 @@ if (isset($_GET['page']) && $_GET['page'] > 1) {
 							<td>{{ $i }}</td>
 							<td>{!! doimau($cv->sohieu, $tukhoa) !!}</td>
 							<td>{{ Carbon\Carbon::parse($cv->ngayky)->format('d/m/Y') }}</td>
-							<td>{!! doimau($cv->trichyeunoidung, $tukhoa) !!}</td>
+							<td><a href="chitiet/{{ $cv->id }}">{!! doimau($cv->trichyeunoidung, $tukhoa) !!}</a></td>
 							<td>{{ $cv->loaihinhcongvan->name }}</td>
 							<td>{{ $cv->coquanbanhanh->name }}</td>
 							<td>{{ $cv->hinhthucvanban->name }}</td>
@@ -67,9 +67,9 @@ if (isset($_GET['page']) && $_GET['page'] > 1) {
 					@else
 						<tr class="odd gradeX" align="center">
 							<td>{{ $i }}</td>
-							<td>{{ $cv->sohieu }}</td>
+							<td>{!! doimau($cv->sohieu, $tukhoa) !!}</td>
 							<td>{{ Carbon\Carbon::parse($cv->ngayky)->format('d/m/Y') }}</td>
-							<td>{{ $cv->trichyeunoidung }}</td>
+							<td><a href="chitiet/{{ $cv->id }}">{!! doimau($cv->trichyeunoidung, $tukhoa) !!}</a></td>
 							<td>{{ $cv->coquanbanhanh->name }}</td>
 							<td>{{ $cv->hinhthucvanban->name }}</td>
 							<td>{{ $cv->linhvuc->name }}</td>

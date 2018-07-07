@@ -8,3 +8,8 @@ nhanvien@quanlycongvan.com
 admin@quanlycongvan.com
 superadmin@quanlycongvan.com
 mật khẩu: 123456 
+*****************
+Liên hệ tác giả:
+Nguyễn Minh Hoàng
+emai: hoang1501106004@vnkgu.edu.vn
+phone: 01656987140
