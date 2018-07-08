@@ -17,7 +17,7 @@
                         <?php $i = 0;?>
                         @foreach($slideviewshare as $sl)
                             <div class="item @if($i==0) active @endif ">
-                                <img class="slide-image" src="image/{{ $sl->hinhanh }}" alt="{{ $sl->name }}">
+                               <a href="{{ $sl->link }}"><img class="slide-image" src="image/{{ $sl->hinhanh }}" alt="{{ $sl->name }}"></a>
                             </div>
                             <?php $i++;?>
                         @endforeach

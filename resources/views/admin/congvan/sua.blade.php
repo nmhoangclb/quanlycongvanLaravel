@@ -1,5 +1,7 @@
 @extends('admin.layout.index')
-
+@section('title')
+Sửa Công Văn
+@endsection
 @section('content')
 
         <!-- Page Content -->
@@ -153,7 +155,6 @@
                             <input type="file" name="taptindinhkem">
                         </div>
                             <button type="submit" class="btn btn-default">Sửa</button>
-                            <button type="reset" class="btn btn-default">Làm mới</button>
                         <form>
                     </div>
                 </div>

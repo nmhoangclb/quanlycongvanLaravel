@@ -1,5 +1,7 @@
 @extends('admin.layout.index')
-
+@section('title')
+Danh sách Cơ quan ban hành
+@endsection
 @section('content')
 
         <!-- Page Content -->

@@ -1,5 +1,7 @@
 @extends('admin.layout.index')
-
+@section('title')
+Sửa Hình thức văn bản
+@endsection
 @section('content')
 
         <!-- Page Content -->

@@ -1,4 +1,7 @@
 @extends('layout.index')
+@section('title')
+Giới thiệu
+@endsection
 @section('content')
 <div class="container">
 <div class="panel-heading" style="background-color:#337AB7; color:white;" >

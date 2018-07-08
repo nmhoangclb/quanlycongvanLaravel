@@ -1,5 +1,7 @@
 @extends('admin.layout.index')
-
+@section('title')
+Danh sách Slide
+@endsection
 
 @section('content')
 <!-- Page Content -->

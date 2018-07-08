@@ -1,5 +1,7 @@
 @extends('admin.layout.index')
-
+@section('title')
+Danh sách Người dùng
+@endsection
 @section('content')
 
         <!-- Page Content -->

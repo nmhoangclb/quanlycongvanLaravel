@@ -1,5 +1,7 @@
 @extends('admin.layout.index')
-
+@section('title')
+Sửa Người dùng
+@endsection
 
 
 @section('content')

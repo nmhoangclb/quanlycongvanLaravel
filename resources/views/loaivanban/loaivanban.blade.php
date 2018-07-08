@@ -1,5 +1,7 @@
 @extends('layout.index')
-
+@section('title')
+Loại văn bản
+@endsection
 
 @section('content')
 <!-- Content -->

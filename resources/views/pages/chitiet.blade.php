@@ -1,5 +1,7 @@
 @extends('layout.index')
-
+@section('title')
+Chi tiết
+@endsection
 
 @section('content')
 <!-- Content -->
@@ -80,7 +82,7 @@
 				@else
 					<tr>
 						<th>Còn hiệu lực</th>
-						<th><input type="checkbox" value="1" disabled></th>
+						<th><input type="checkbox" value="1" checked disabled></th>
 					</tr>
 				@endif
 

@@ -1,5 +1,7 @@
 @extends('admin.layout.index')
-
+@section('title')
+Thêm Công Văn
+@endsection
 @section('content')
 
         <!-- Page Content -->

@@ -7,7 +7,7 @@
     <meta name="description" content="Hệ thống quản lý công văn">
     <meta name="author" content="Nguyễn Minh Hoàng">
     <base href="{{ asset('') }}">
-    <title>Trang quản lý | Hệ thống quản lý công văn</title>
+    <title>@yield('title') | Hệ thống quản lý công văn</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="admin_asset/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">

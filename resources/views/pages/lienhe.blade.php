@@ -1,4 +1,7 @@
 @extends('layout.index')
+@section('title')
+Liên hệ
+@endsection
 @section('content')
 <div class="col-md-9">
 	            <div class="panel panel-default">

@@ -1,5 +1,7 @@
 @extends('admin.layout.index')
-
+@section('title')
+Danh sách Công văn
+@endsection
 @section('content')
 
         <!-- Page Content -->
@@ -87,147 +89,8 @@ if (isset($_GET['page']) && $_GET['page'] != 1) {
                                     <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/congvan/sua/{{ $value->id }}">Sửa</a></td>
                                 </tr>
                             @endforeach
-                            <!-- <tr class="odd gradeX" align="center">
-                                <td>2</td>
-                                <td>1983/BC-SYT</td>
-                                <td>2017-10-17</td>
-                                <td>Báo cáo tình hình công tác y tế tháng 10/2017</td>
-                                <td><input type="checkbox" name="vehicle" value="Bike"></td>
-                                <td>Công văn đi</td>
-                                <td>Sở Y Tế</td>
-                                <td>Báo cáo</td>
-                                <td>Y Tế</td>
-                                <td>Văn bản chỉ đạo điều hành</td>
-                                <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="#">Delete</a></td>
-                                <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="#">Edit</a></td>
-                            </tr>
-                            <tr class="odd gradeX" align="center">
-                                <td>3</td>
-                                <td>1983/BC-SYT</td>
-                                <td>2017-10-17</td>
-                                <td>Báo cáo tình hình công tác y tế tháng 10/2017</td>
-                                <td><input type="checkbox" name="vehicle" value="Bike"></td>
-                                <td>Văn bản nội bô</td>
-                                <td>Sở Y Tế</td>
-                                <td>Báo cáo</td>
-                                <td>Y Tế</td>
-                                <td>Văn bản chỉ đạo điều hành</td>
-                                <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="#">Delete</a></td>
-                                <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="#">Edit</a></td>
-                            </tr>
-                            <tr class="odd gradeX" align="center">
-                                <td>4</td>
-                                <td>1983/BC-SYT</td>
-                                <td>2017-10-17</td>
-                                <td>Báo cáo tình hình công tác y tế tháng 10/2017</td>
-                                <td><input type="checkbox" name="vehicle" value="Bike"></td>
-                                <td>Công văn đến</td>
-                                <td>Sở Y Tế</td>
-                                <td>Báo cáo</td>
-                                <td>Y Tế</td>
-                                <td>Văn bản chỉ đạo điều hành</td>
-                                <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="#">Delete</a></td>
-                                <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="#">Edit</a></td>
-                            </tr>
-                            <tr class="odd gradeX" align="center">
-                                <td>5</td>
-                                <td>1983/BC-SYT</td>
-                                <td>2017-10-17</td>
-                                <td>Báo cáo tình hình công tác y tế tháng 10/2017</td>
-                                <td><input type="checkbox" name="vehicle" value="Bike" checked disabled></td>
-                                <td>Công văn đến</td>
-                                <td>Sở Y Tế</td>
-                                <td>Báo cáo</td>
-                                <td>Y Tế</td>
-                                <td>Văn bản chỉ đạo điều hành</td>
-                                <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="#">Delete</a></td>
-                                <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="#">Edit</a></td>
-                            </tr>
-                            <tr class="odd gradeX" align="center">
-                                <td>6</td>
-                                <td>1983/BC-SYT</td>
-                                <td>2017-10-17</td>
-                                <td>Báo cáo tình hình công tác y tế tháng 10/2017</td>
-                                <td><input type="checkbox" name="vehicle" value="Bike"></td>
-                                <td>Công văn đến</td>
-                                <td>Sở Y Tế</td>
-                                <td>Báo cáo</td>
-                                <td>Y Tế</td>
-                                <td>Văn bản chỉ đạo điều hành</td>
-                                <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="#">Delete</a></td>
-                                <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="#">Edit</a></td>
-                            </tr>
-                            <tr class="odd gradeX" align="center">
-                                <td>7</td>
-                                <td>1983/BC-SYT</td>
-                                <td>2017-10-17</td>
-                                <td>Báo cáo tình hình công tác y tế tháng 10/2017</td>
-                                <td><input type="checkbox" name="vehicle" value="Bike"></td>
-                                <td>Công văn đến</td>
-                                <td>Sở Y Tế</td>
-                                <td>Báo cáo</td>
-                                <td>Y Tế</td>
-                                <td>Văn bản chỉ đạo điều hành</td>
-                                <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="#">Delete</a></td>
-                                <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="#">Edit</a></td>
-                            </tr>
-                            <tr class="odd gradeX" align="center">
-                                <td>8</td>
-                                <td>1983/BC-SYT</td>
-                                <td>2017-10-17</td>
-                                <td>Báo cáo tình hình công tác y tế tháng 10/2017</td>
-                                <td><input type="checkbox" name="vehicle" value="Bike" checked disabled></td>
-                                <td>Công văn đến</td>
-                                <td>Sở Y Tế</td>
-                                <td>Báo cáo</td>
-                                <td>Y Tế</td>
-                                <td>Văn bản chỉ đạo điều hành</td>
-                                <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="#">Delete</a></td>
-                                <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="#">Edit</a></td>
-                            </tr>
-                            <tr class="odd gradeX" align="center">
-                                <td>9</td>
-                                <td>1983/BC-SYT</td>
-                                <td>2017-10-17</td>
-                                <td>Báo cáo tình hình công tác y tế tháng 10/2017</td>
-                                <td><input type="checkbox" name="vehicle" value="Bike"></td>
-                                <td>Công văn đến</td>
-                                <td>Sở Y Tế</td>
-                                <td>Báo cáo</td>
-                                <td>Y Tế</td>
-                                <td>Văn bản chỉ đạo điều hành</td>
-                                <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="#">Delete</a></td>
-                                <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="#">Edit</a></td>
-                            </tr>
-                            <tr class="odd gradeX" align="center">
-                                <td>10</td>
-                                <td>1983/BC-SYT</td>
-                                <td>2017-10-17</td>
-                                <td>Báo cáo tình hình công tác y tế tháng 10/2017</td>
-                                <td><input type="checkbox" name="vehicle" value="Bike"></td>
-                                <td>Công văn đến</td>
-                                <td>Sở Y Tế</td>
-                                <td>Báo cáo</td>
-                                <td>Y Tế</td>
-                                <td>Văn bản chỉ đạo điều hành</td>
-                                <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="#">Delete</a></td>
-                                <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="#">Edit</a></td>
-                            </tr>
-                            <tr class="odd gradeX" align="center">
-                                <td>11</td>
-                                <td>1983/BC-SYT</td>
-                                <td>2017-10-17</td>
-                                <td>Báo cáo tình hình công tác y tế tháng 10/2017</td>
-                                <td><input type="checkbox" name="vehicle" value="Bike" checked disabled></td>
-                                <td>Công văn đến</td>
-                                <td>Sở Y Tế</td>
-                                <td>Báo cáo</td>
-                                <td>Y Tế</td>
-                                <td>Văn bản chỉ đạo điều hành</td>
-                                <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="#">Delete</a></td>
-                                <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="#">Edit</a></td>
-                            </tr>
- -->
+
+
 
                         </tbody>
                     </table>
@@ -237,5 +100,6 @@ if (isset($_GET['page']) && $_GET['page'] != 1) {
             <!-- /.container-fluid -->
         </div>
         <!-- /#page-wrapper -->
+
 
 @endsection
